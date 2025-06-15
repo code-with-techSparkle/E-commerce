@@ -1,1 +1,15 @@
 @import "tailwindcss";
+
+:root {
+    --font-anton: 'Anton', sans-serif;
+    --font-geist-mono: 'Geist Mono', monospace;
+  }
+  
+  h1 {
+    font-family: var(--font-anton);
+  }
+  
+  code {
+    font-family: var(--font-geist-mono);
+  }
+  
