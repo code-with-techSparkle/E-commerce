@@ -12,9 +12,6 @@ function page() {
         <NewArrivals />
       </div>
       <Brands />
-      <div className='p-16 max-xl:p-8 max-md:px-6'>
-        <ProductView />
-      </div>
     </div>
   )
 }

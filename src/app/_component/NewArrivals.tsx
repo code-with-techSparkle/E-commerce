@@ -15,12 +15,12 @@ function NewArrivals() {
         </div>
       </div>
       <div className='w-full h-full grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1  gap-8'>
-        <Product src='https://ik.imagekit.io/qss3mmw4a/E-commerce/product-1.png?updatedAt=1749986516010' name="Tuaha" price="0123" />
-        <Product src='https://ik.imagekit.io/qss3mmw4a/E-commerce/product-1.png?updatedAt=1749986516010' name="Tuaha" price="0123" />
-        <Product src='https://ik.imagekit.io/qss3mmw4a/E-commerce/product-1.png?updatedAt=1749986516010' name="Tuaha" price="0123" />
-        <Product src='https://ik.imagekit.io/qss3mmw4a/E-commerce/product-1.png?updatedAt=1749986516010' name="Tuaha" price="0123" />
-        <Product src='https://ik.imagekit.io/qss3mmw4a/E-commerce/product-1.png?updatedAt=1749986516010' name="Tuaha" price="0123" />
-        <Product src='https://ik.imagekit.io/qss3mmw4a/E-commerce/product-1.png?updatedAt=1749986516010' name="Tuaha" price="0123" />
+        <Product src='https://ik.imagekit.io/qss3mmw4a/E-commerce/product-1.png?updatedAt=1749986516010' name="Tuaha" price="0123" href='/product' />
+        <Product src='https://ik.imagekit.io/qss3mmw4a/E-commerce/product-1.png?updatedAt=1749986516010' name="Tuaha" price="0123" href='/product' />
+        <Product src='https://ik.imagekit.io/qss3mmw4a/E-commerce/product-1.png?updatedAt=1749986516010' name="Tuaha" price="0123" href='/product' />
+        <Product src='https://ik.imagekit.io/qss3mmw4a/E-commerce/product-1.png?updatedAt=1749986516010' name="Tuaha" price="0123" href='/product' />
+        <Product src='https://ik.imagekit.io/qss3mmw4a/E-commerce/product-1.png?updatedAt=1749986516010' name="Tuaha" price="0123" href='/product' />
+        <Product src='https://ik.imagekit.io/qss3mmw4a/E-commerce/product-1.png?updatedAt=1749986516010' name="Tuaha" price="0123" href='/product' />
       </div>
     </div>
   )

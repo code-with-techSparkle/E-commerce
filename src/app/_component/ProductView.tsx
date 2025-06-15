@@ -28,6 +28,25 @@ export default function ProductView() {
     setCartItems((prev) => prev.filter((_, i) => i !== index));
   };
 
+  const updateCartQuantity = (index: number, newQty: number) => {
+    setCartItems((prev) => {
+      const updated = [...prev];
+      if (newQty >= 1) updated[index].quantity = newQty;
+      return updated;
+    });
+  };
+
+  const basePrice = 607.6;
+  const sizePriceModifier: Record<string, number> = {
+    XS: -30,
+    S: -15,
+    M: 0,
+    L: 20,
+    XL: 40,
+  };
+
+  const currentPrice = basePrice + sizePriceModifier[selectedSize];
+
   return (
     <>
       <div className="w-full px-4 md:px-8 lg:px-16 py-12 lg:py-24 bg-white text-black">
@@ -53,9 +72,8 @@ export default function ProductView() {
               {productImages.map((img, index) => (
                 <div
                   key={index}
-                  className={`cursor-pointer border-2 rounded-xl overflow-hidden ${
-                    img === mainImage ? 'border-black' : 'border-transparent'
-                  }`}
+                  className={`cursor-pointer border-2 rounded-xl overflow-hidden ${img === mainImage ? 'border-black' : 'border-transparent'
+                    }`}
                   onClick={() => setMainImage(img)}
                 >
                   <Image
@@ -82,7 +100,7 @@ export default function ProductView() {
               The Alia trousers bring the comfort of sweatpants into a tailored silhouette. Featuring a racing stripe, tapered leg, and German craftsmanship.
             </p>
 
-            <p className="text-xl sm:text-2xl font-medium">$607.60</p>
+            <p className="text-xl sm:text-2xl font-medium">${currentPrice.toFixed(2)}</p>
 
             {/* Size Selector */}
             <div>
@@ -92,11 +110,10 @@ export default function ProductView() {
                   <button
                     key={size}
                     onClick={() => setSelectedSize(size)}
-                    className={`px-4 py-2 border rounded-full transition ${
-                      selectedSize === size
+                    className={`px-4 py-2 border rounded-full transition ${selectedSize === size
                         ? 'bg-black text-white border-black'
                         : 'border-gray-300'
-                    }`}
+                      }`}
                   >
                     {size}
                   </button>
@@ -132,8 +149,9 @@ export default function ProductView() {
                   {
                     image: mainImage,
                     title: 'Alia Knit Trouser',
-                    price: 607.6,
+                    price: currentPrice,
                     quantity,
+                    size: selectedSize,
                   },
                 ]);
                 setCartOpen(true);
@@ -152,7 +170,9 @@ export default function ProductView() {
         onClose={() => setCartOpen(false)}
         cartItems={cartItems}
         onRemove={removeFromCart}
+        onUpdateQuantity={updateCartQuantity}
       />
+
     </>
   );
 }
