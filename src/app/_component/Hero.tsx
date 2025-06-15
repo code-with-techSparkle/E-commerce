@@ -46,7 +46,7 @@ function Hero() {
           <div className="absolute left-7 bottom-7 flex max-sm:flex-col gap-4">
              <HeroButton />
              <div className="flex justify-center items-center gap-3 w-36 h-12 rounded-full group">
-                 <h4 className="font-bold text-md text-white">See Product's</h4>
+                 <h4 className="font-bold text-md text-white">See Products</h4>
                  <FaArrowRight className="size-4 text-white -rotate-45 group-hover:rotate-0 transition duration-500" />
              </div>
           </div>

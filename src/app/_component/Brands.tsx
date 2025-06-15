@@ -46,7 +46,7 @@ const Brands: React.FC = () => {
 
       <div className="w-full max-w-[1250px] text-center">
         <h1 className="text-6xl max-md:text-3xl">
-          "I love the variety of styles and the high-quality clothing on this web fashion site."
+          I love the variety of styles and the high-quality clothing on this web fashion site.
         </h1>
       </div>
 

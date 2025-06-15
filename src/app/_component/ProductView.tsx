@@ -4,6 +4,8 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 
+
+
 const sizes = ['XS', 'S', 'M', 'L', 'XL'];
 
 const productImages = [
@@ -23,7 +25,16 @@ export default function ProductView() {
   };
 
   const [cartOpen, setCartOpen] = useState(false);
-  const [cartItems, setCartItems] = useState<any[]>([]);
+  interface CartItem {
+    image: string;
+    title: string;
+    price: number;
+    quantity: number;
+    size: string;
+  }
+  
+  const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  
   const removeFromCart = (index: number) => {
     setCartItems((prev) => prev.filter((_, i) => i !== index));
   };
