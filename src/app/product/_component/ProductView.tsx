@@ -1,8 +1,8 @@
 'use client';
-import CartSidebar from './CartSidebar';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import CartSidebar from './CartSidebar';
 
 
 
@@ -10,8 +10,8 @@ const sizes = ['XS', 'S', 'M', 'L', 'XL'];
 
 const productImages = [
   'https://ik.imagekit.io/qss3mmw4a/E-commerce/product-1.png?updatedAt=1749986516010',
-  'https://ik.imagekit.io/qss3mmw4a/E-commerce/product-2?updatedAt=1750058882415',
-  'https://ik.imagekit.io/qss3mmw4a/E-commerce/product-3?updatedAt=1750058912492',
+  'https://ik.imagekit.io/qss3mmw4a/E-commerce/product-1-2?updatedAt=1750064918843',
+  'https://ik.imagekit.io/qss3mmw4a/E-commerce/product-1-3?updatedAt=1750064940348',
 ];
 
 export default function ProductView() {

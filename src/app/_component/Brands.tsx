@@ -3,6 +3,7 @@ import React from 'react';
 import { IoIosStar } from 'react-icons/io';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { RiJavascriptFill, RiNextjsFill, RiReactjsFill, RiTailwindCssFill } from 'react-icons/ri';
 
 type Testimonial = {
   src: string; 
@@ -35,7 +36,7 @@ const Brands: React.FC = () => {
   ];
 
   return (
-    <div className="w-full h-screen flex flex-col gap-8 justify-center items-center bg-[#F4F4F4] px-16 max-xl:px-8 max-md:px-6 overflow-hidden py-24 max-lg:py-14 max-sm:py-10">
+    <div className="w-full h-screen max-md:h-full flex flex-col gap-8 justify-center items-center bg-[#F4F4F4] px-16 max-xl:px-8 max-md:px-6 overflow-hidden py-24 max-lg:py-14 max-sm:py-10">
       <div className="flex justify-center items-center gap-2">
         {Array(5)
           .fill(null)
@@ -52,25 +53,43 @@ const Brands: React.FC = () => {
 
       <h4 className="text-2xl">- Some & Co</h4>
 
-      <motion.div
-        initial={{ x: '0%' }}
-        animate={{ x: '-50%' }}
-        transition={{
-          repeat: Infinity,
-          duration: 10,
-          ease: 'linear',
-        }}
-        className="flex gap-3 flex-nowrap pr-40 pl-20 max-md:flex-col max-md:pr-5"
-      >
-        {[...testimonial, ...testimonial].map((item, index) => (
-          <div
-            key={`${item.src}-${index}`}
-            className="md:p-10 rounded-xl text-white flex-none"
-          >
-            <Image src={item.src} alt='' width={100} height={100} ></Image>
-          </div>
-        ))}
-      </motion.div>
+      <div className="overflow-hidden whitespace-nowrap py-4 mx-auto w-[50%] max-lg:w-full mt-5">
+        <div className="animate-marquee flex gap-5">
+          <span className="mx-4 text-lg flex items-center gap-2">
+            <RiReactjsFill className="text-7xl" />
+            React
+          </span>
+          <span className="mx-4 text-lg flex items-center gap-2">
+            <RiTailwindCssFill className="text-7xl" />
+            Tailwind CSS
+          </span>
+          <span className="mx-4 text-lg flex items-center gap-2">
+            <RiJavascriptFill className="text-7xl" />
+            JavaScript
+          </span>
+          <span className="mx-4 text-lg flex items-center gap-2">
+            <RiNextjsFill className="text-7xl" />
+            Next.Js
+          </span>
+          {/* row2 */}
+          <span className="mx-4 text-lg flex items-center gap-2">
+            <RiReactjsFill className="text-7xl" />
+            React
+          </span>
+          <span className="mx-4 text-lg flex items-center gap-2">
+            <RiTailwindCssFill className="text-7xl" />
+            Tailwind CSS
+          </span>
+          <span className="mx-4 text-lg flex items-center gap-2">
+            <RiJavascriptFill className="text-7xl" />
+            JavaScript
+          </span>
+          <span className="mx-4 text-lg flex items-center gap-2">
+            <RiNextjsFill className="text-7xl" />
+            Next.Js
+          </span>
+        </div>
+      </div>
     </div>
   );
 };
