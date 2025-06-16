@@ -10,8 +10,8 @@ const sizes = ['XS', 'S', 'M', 'L', 'XL'];
 
 const productImages = [
   'https://ik.imagekit.io/qss3mmw4a/E-commerce/product-1.png?updatedAt=1749986516010',
-  'https://ik.imagekit.io/qss3mmw4a/E-commerce/product-2.png?updatedAt=1749986516010',
-  'https://ik.imagekit.io/qss3mmw4a/E-commerce/product-3.png?updatedAt=1749986516010',
+  'https://ik.imagekit.io/qss3mmw4a/E-commerce/product-2?updatedAt=1750058882415',
+  'https://ik.imagekit.io/qss3mmw4a/E-commerce/product-3?updatedAt=1750058912492',
 ];
 
 export default function ProductView() {
