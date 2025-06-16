@@ -1,16 +1,18 @@
 import type { Metadata } from "next";
 import { Anton } from "next/font/google";
-import { Geist_Mono } from "next/font/google"; 
+import { Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 const anton = Anton({
-weight: "400" ,
-subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+  weight: "400", 
   subsets: ["latin"],
+  variable: "--font-anton",
+  display: "swap",
+})
+const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-geist-mono",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -20,12 +22,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en">
-      <body className={`${anton.variable} ${geistMono.variable} antialiased`}>
+    <html lang="en" className={`${anton.variable} ${geistMono.variable}`}>
+      <body className="antialiased">
         {children}
       </body>
     </html>
