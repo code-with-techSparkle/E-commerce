@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiMenu, FiX } from "react-icons/fi";
 import HeroButton from "@/app/_component/HeroButton";
+import { FaAngleDown } from "react-icons/fa";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -29,7 +30,7 @@ const Navbar = () => {
         onMouseLeave={() => !mobileMenuOpen && setPagesOpen(false)}
         onClick={() => mobileMenuOpen && setPagesOpen(!pagesOpen)}
       >
-        <span>Categories</span>
+        <span className="flex justify-center items-center gap-2 group">Categories <FaAngleDown className="group-hover:rotate-180" /></span>
 
         <AnimatePresence>
           {pagesOpen && (
@@ -42,13 +43,13 @@ const Navbar = () => {
               } bg-zinc-500 text-white rounded-md shadow-lg py-2 w-60 z-50`}
             >
               <li className="px-4 py-2 hover:text-white/75">
-                <Link href="/aboutus" onClick={() => setMobileMenuOpen(false)}>Women</Link>
+                <Link href="/all_product" onClick={() => setMobileMenuOpen(false)}>Women</Link>
               </li>
               <li className="px-4 py-2 hover:text-white/75">
-               <Link href="/team" onClick={() => setMobileMenuOpen(false)}>Men</Link>
+               <Link href="/all_product" onClick={() => setMobileMenuOpen(false)}>Men</Link>
               </li>
               <li className="px-4 py-2 hover:text-white/75">
-                 <Link href="/faq" onClick={() => setMobileMenuOpen(false)}>Kid&apos;s</Link>
+                 <Link href="/all_product" onClick={() => setMobileMenuOpen(false)}>Kid&apos;s</Link>
               </li>
             </motion.ul>
           )}

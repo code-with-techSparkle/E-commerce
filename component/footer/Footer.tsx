@@ -50,8 +50,8 @@ function Footer() {
           <h2 className="font-sans text-2xl mb-3">More Info</h2>
           <div className="flex flex-col gap-2">
             <HoverLink href="/">Home</HoverLink>
-            <HoverLink href="/">About</HoverLink>
-            <HoverLink href="/">Contact</HoverLink>
+            <HoverLink href="/about">About</HoverLink>
+            <HoverLink href="/contact">Contact</HoverLink>
           </div>
         </motion.div>
 
@@ -59,9 +59,9 @@ function Footer() {
         <motion.div className="w-[48%] md:w-[15%]" variants={fadeUp}>
           <h2 className="font-sans text-2xl mb-3">Categories</h2>
           <div className="flex flex-col gap-2">
-            <HoverLink href="/">Men</HoverLink>
-            <HoverLink href="/">Women</HoverLink>
-            <HoverLink href="/">Kids</HoverLink>
+            <HoverLink href="/all_product">Men</HoverLink>
+            <HoverLink href="/all_product">Women</HoverLink>
+            <HoverLink href="/all_product">Kids</HoverLink>
           </div>
         </motion.div>
 

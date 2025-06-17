@@ -3,7 +3,9 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import CartSidebar from './CartSidebar';
-
+import { BsBusFront } from "react-icons/bs";
+import { LuLeaf } from 'react-icons/lu';
+import { LiaCottonBureau } from 'react-icons/lia';
 
 
 const sizes = ['XS', 'S', 'M', 'L', 'XL'];
@@ -32,9 +34,9 @@ export default function ProductView() {
     quantity: number;
     size: string;
   }
-  
+
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
-  
+
   const removeFromCart = (index: number) => {
     setCartItems((prev) => prev.filter((_, i) => i !== index));
   };
@@ -67,7 +69,7 @@ export default function ProductView() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="w-full md:w-1/2 flex flex-col gap-6"
+            className="w-full md:w-1/2 flex flex-col items-start gap-6"
           >
             {/* Main Image */}
             <Image
@@ -122,8 +124,8 @@ export default function ProductView() {
                     key={size}
                     onClick={() => setSelectedSize(size)}
                     className={`px-4 py-2 border rounded-full transition ${selectedSize === size
-                        ? 'bg-black text-white border-black'
-                        : 'border-gray-300'
+                      ? 'bg-black text-white border-black'
+                      : 'border-gray-300'
                       }`}
                   >
                     {size}
@@ -135,7 +137,7 @@ export default function ProductView() {
             {/* Quantity Selector */}
             <div className="flex items-center gap-4 mt-4">
               <p className="font-medium">Quantity</p>
-              <div className="flex items-center border border-gray-300 rounded-full overflow-hidden">
+              <div className="flex justify-between items-center border border-gray-300 rounded-full overflow-hidden">
                 <button
                   onClick={decrementQty}
                   className="px-4 py-2 text-lg hover:bg-gray-100"
@@ -171,11 +173,21 @@ export default function ProductView() {
             >
               Add to Cart
             </button>
+            <hr />
+            <div className='w-full flex flex-col items-start'>
+              <div className='flex justify-center items-center gap-3'>
+                <BsBusFront /> Fast & Free Delivery
+              </div>
+              <div className='flex justify-center items-center gap-3'>
+                <LuLeaf />Fast & Free Delivery
+              </div>
+              <div className='flex justify-center items-center gap-3'>
+                <LiaCottonBureau /> Fast & Free Delivery
+              </div>
+            </div>
           </motion.div>
         </div>
       </div>
-
-      {/* 🛒 Cart Sidebar OUTSIDE main layout */}
       <CartSidebar
         isOpen={cartOpen}
         onClose={() => setCartOpen(false)}

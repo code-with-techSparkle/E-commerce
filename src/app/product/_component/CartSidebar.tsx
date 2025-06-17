@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { RxCross1 } from 'react-icons/rx';
 
 interface CartItem {
   image: string;
@@ -41,7 +42,7 @@ export default function CartSidebar({
       >
         <div className="p-6 border-b font-semibold text-xl flex justify-between items-center">
           <span>Shopping Cart</span>
-          <button onClick={onClose} className="text-gray-500 text-2xl">*</button>
+          <button onClick={onClose} className="text-gray-500 text-2xl"><RxCross1 /></button>
         </div>
 
         <div className="flex-1 overflow-y-auto p-6 space-y-6">
@@ -62,7 +63,7 @@ export default function CartSidebar({
                       onClick={() => onUpdateQuantity(i, item.quantity - 1)}
                       disabled={item.quantity === 1}
                     >
-                      −
+                      -
                     </button>
                     <span>{item.quantity}</span>
                     <button
@@ -84,7 +85,7 @@ export default function CartSidebar({
                   onClick={() => onRemove(i)}
                   className="text-gray-400 hover:text-red-500 text-xl"
                 >
-                 *
+                 <RxCross1 className='size-4' />
                 </button>
               </div>
             ))

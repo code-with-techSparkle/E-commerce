@@ -1,5 +1,6 @@
 import React from 'react'
 import Product from './Product'
+import Link from 'next/link'
 
 function NewArrivals() {
   return (
@@ -9,10 +10,10 @@ function NewArrivals() {
             <h1 className='text-4xl font-sans tracking-wider'>New Arrivals</h1>
             <p className='text-lg font-normal opacity-80'>Shop the Latest Styles: Stay ahead of the curve with our newest arrivals</p>
         </div>
-        <div className='flex flex-col justify-center items-end max-md:pb-3 group'>
+        <Link href='/all_product' className='flex flex-col justify-center items-end max-md:pb-3 group'>
              <h5 className='text-xl'>All Products</h5>
              <span className='w-[50%] h-[1px] bg-black group-hover:w-full duration-500'></span>
-        </div>
+        </Link>
       </div>
       <div className='w-full h-full grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1  gap-8'>
         <Product src='https://ik.imagekit.io/qss3mmw4a/E-commerce/product-1.png?updatedAt=1749986516010' name="Name" price="price" href='/product' />
