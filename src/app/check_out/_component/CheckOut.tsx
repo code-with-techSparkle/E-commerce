@@ -21,7 +21,7 @@ export default function Checkout() {
   }, []);
 
   const getTotal = () =>
-    cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+    cartItems.reduce((total, item) => total + item.price * item.quantity, 1);
 
   return (
     <div className="min-h-screen p-6 bg-gray-100">

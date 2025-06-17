@@ -46,7 +46,7 @@ export default function ProductView() {
     });
   };
 
-  const basePrice = 607.6;
+  const basePrice = 607;
   const sizePriceModifier: Record<string, number> = {
     XS: -30,
     S: -15,
