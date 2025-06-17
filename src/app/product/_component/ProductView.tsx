@@ -174,7 +174,7 @@ export default function ProductView() {
               Add to Cart
             </button>
             <hr />
-            <div className='w-full flex flex-col items-start'>
+            {/* <div className='w-full flex flex-col items-start'>
               <div className='flex justify-center items-center gap-3'>
                 <BsBusFront /> Fast & Free Delivery
               </div>
@@ -184,7 +184,7 @@ export default function ProductView() {
               <div className='flex justify-center items-center gap-3'>
                 <LiaCottonBureau /> Fast & Free Delivery
               </div>
-            </div>
+            </div> */}
           </motion.div>
         </div>
       </div>
