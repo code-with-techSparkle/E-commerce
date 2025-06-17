@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 function NewArrivals() {
   return (
-    <div className="w-full h-full py-24 max-lg:py-14 max-sm:py-10 overflow-hidden">
+    <div className="w-full h-full pt-24 max-lg:py-14 max-sm:py-10 overflow-hidden">
       <div className='flex max-lg:flex-col max-lg:items-start justify-between items-center'>
         <div className='flex flex-col'>
             <h1 className='text-4xl font-sans tracking-wider'>New Arrivals</h1>
@@ -15,7 +15,7 @@ function NewArrivals() {
              <span className='w-[50%] h-[1px] bg-black group-hover:w-full duration-500'></span>
         </Link>
       </div>
-      <div className='w-full h-full grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1  gap-8'>
+      <div className='w-full h-full grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8'>
         <Product src='https://ik.imagekit.io/qss3mmw4a/E-commerce/product-1.png?updatedAt=1749986516010' name="Name" price="price" href='/product' />
         <Product src='https://ik.imagekit.io/qss3mmw4a/E-commerce/product-2?updatedAt=1750064978759' name="Name" price="price" href='/product' />
         <Product src='https://ik.imagekit.io/qss3mmw4a/E-commerce/product-3?updatedAt=1750064998373' name="Name" price="price" href='/product' />

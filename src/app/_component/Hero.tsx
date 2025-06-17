@@ -40,10 +40,8 @@ function Hero() {
 
   return (
     <div className="w-full h-screen overflow-hidden">
-      <div className="w-full h-screen">
+      <div className="w-full h-screen pt-4">
         <div className="relative bg-black w-full h-full rounded-3xl overflow-hidden">
-
-          {/* 📸 Background with Scroll Zoom + Mouse Parallax */}
           <motion.div
             style={{
               x,
@@ -60,8 +58,6 @@ function Hero() {
               className="w-full max-md:h-screen max-md:object-cover max-md:scale-150"
             />
           </motion.div>
-
-          {/* ✏️ Heading */}
           <motion.div
             className="absolute left-7 top-7 text-7xl text-white max-lg:text-5xl max-md:text-4xl max-sm:text-3xl"
             initial={{ opacity: 0, y: -50 }}
@@ -70,8 +66,6 @@ function Hero() {
           >
             <h1>STYLE REDEFINED, EFFORTLESSLY YOURS</h1>
           </motion.div>
-
-          {/* 🔘 Buttons */}
           <motion.div
             className="absolute left-7 bottom-7 flex max-sm:flex-col gap-4"
             initial={{ opacity: 0, y: 40 }}

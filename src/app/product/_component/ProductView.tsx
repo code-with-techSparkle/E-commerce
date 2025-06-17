@@ -3,9 +3,6 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import CartSidebar from './CartSidebar';
-import { BsBusFront } from "react-icons/bs";
-import { LuLeaf } from 'react-icons/lu';
-import { LiaCottonBureau } from 'react-icons/lia';
 
 
 const sizes = ['XS', 'S', 'M', 'L', 'XL'];
@@ -157,40 +154,31 @@ export default function ProductView() {
             {/* Add to Cart */}
             <button
               onClick={() => {
-                setCartItems([
-                  ...cartItems,
-                  {
-                    image: mainImage,
-                    title: 'Alia Knit Trouser',
-                    price: currentPrice,
-                    quantity,
-                    size: selectedSize,
-                  },
-                ]);
+                const newCartItem = {
+                  image: mainImage,
+                  title: 'Alia Knit Trouser',
+                  price: currentPrice,
+                  quantity,
+                  size: selectedSize,
+                };
+              
+                const updatedCart = [...cartItems, newCartItem];
+                localStorage.setItem('cartItems', JSON.stringify(updatedCart));
+              
+                setCartItems(updatedCart);
                 setCartOpen(true);
               }}
+              
               className="w-full bg-black text-white py-4 rounded-full text-base sm:text-lg hover:bg-gray-900 transition"
             >
               Add to Cart
             </button>
-            <hr />
-            {/* <div className='w-full flex flex-col items-start'>
-              <div className='flex justify-center items-center gap-3'>
-                <BsBusFront /> Fast & Free Delivery
-              </div>
-              <div className='flex justify-center items-center gap-3'>
-                <LuLeaf />Fast & Free Delivery
-              </div>
-              <div className='flex justify-center items-center gap-3'>
-                <LiaCottonBureau /> Fast & Free Delivery
-              </div>
-            </div> */}
           </motion.div>
         </div>
       </div>
       <CartSidebar
         isOpen={cartOpen}
-        onClose={() => setCartOpen(false)}
+        onClose={() => setCartOpen(false)}  
         cartItems={cartItems}
         onRemove={removeFromCart}
         onUpdateQuantity={updateCartQuantity}

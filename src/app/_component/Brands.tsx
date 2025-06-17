@@ -53,7 +53,7 @@ const Brands: React.FC = () => {
 
       <h4 className="text-2xl">- Some & Co</h4>
 
-      <div className="overflow-hidden whitespace-nowrap py-4 mx-auto w-[50%] max-lg:w-full mt-5">
+      <div className="overflow-hidden whitespace-nowrap [mask-image:linear-gradient(to_right,transparent,black_50%,black_50%,transparent)] py-4 mx-auto w-[50%] max-lg:w-full mt-5">
         <div className="animate-marquee flex gap-5">
           <span className="mx-4 text-lg flex items-center gap-2">
             <RiReactjsFill className="text-7xl" />

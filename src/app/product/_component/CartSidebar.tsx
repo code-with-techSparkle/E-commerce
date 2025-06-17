@@ -1,9 +1,10 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { RxCross1 } from 'react-icons/rx';
+import Link from 'next/link';
 
 interface CartItem {
   image: string;
@@ -29,6 +30,8 @@ export default function CartSidebar({
   onUpdateQuantity,
 }: CartSidebarProps) {
   const subtotal = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
+
+
 
   return (
     <>
@@ -85,7 +88,7 @@ export default function CartSidebar({
                   onClick={() => onRemove(i)}
                   className="text-gray-400 hover:text-red-500 text-xl"
                 >
-                 <RxCross1 className='size-4' />
+                  <RxCross1 className='size-4' />
                 </button>
               </div>
             ))
@@ -93,13 +96,15 @@ export default function CartSidebar({
         </div>
 
         <div className="border-t p-6">
-          <div className="flex justify-between font-medium text-lg mb-4">
+          <div className="flex justify-between font-medium w-full text-lg mb-4">
             <span>Subtotal</span>
             <span>${subtotal.toFixed(2)}</span>
           </div>
-          <button className="w-full bg-black text-white py-3 rounded-full text-lg hover:bg-gray-900 transition">
-            Checkout
-          </button>
+          <Link href='/check_out' >  
+            <button className="w-full bg-black text-white py-3 rounded-2xl text-lg hover:bg-gray-900 transition">
+              Checkout
+            </button>
+            </Link>
         </div>
       </motion.div>
     </>

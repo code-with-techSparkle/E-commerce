@@ -48,7 +48,7 @@ export default function OurCollection() {
           </div>
         </motion.div>
 
-        {/* Bags */}
+        {/* Kids */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -62,7 +62,7 @@ export default function OurCollection() {
             className="w-full h-full object-cover rounded-3xl group-hover:scale-110 transition-transform duration-500"
           />
           <div className="absolute inset-0 left-7 top-7">
-            <h3 className="text-black text-4xl font-semibold">Bags</h3>
+            <h3 className="text-black text-4xl font-semibold">Kids</h3>
           </div>
         </motion.div>
       </div>

@@ -12,7 +12,7 @@ interface ProductProps {
 
 function Product({ src, name, price, href }: ProductProps) {
   return (
-    <Link href={href} className='w-full h-full flex flex-col py-10 max-md:pb-5 max-md:pt-2'>
+    <Link href={href} className='w-full h-full flex flex-col pyz-10 max-md:pb-5 max-md:pt-2'>
       <div className='relative rounded-2xl overflow-hidden group'>
         <div className='bg-black w-full h-96 max-md:h-80'>
           <Image
