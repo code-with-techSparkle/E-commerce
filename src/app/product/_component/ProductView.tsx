@@ -59,8 +59,8 @@ export default function ProductView() {
 
   return (
     <>
-      <div className="w-full px-4 md:px-8 lg:px-16 py-12 lg:py-24 bg-white text-black">
-        <div className="flex flex-col md:flex-row gap-10 max-w-7xl mx-auto">
+      <div className="w-full px-4 md:px-8 lg:px-16 py-12 lg:py-24 bg-white text-black lg:overflow-visible">
+        <div className="flex flex-col md:flex-row gap-10 max-w-7xl mx-auto lg:overflow-visible">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -98,77 +98,79 @@ export default function ProductView() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="w-full md:w-1/2 space-y-6"
+            className="w-full md:w-1/2"
           >
-            <h1 className="text-3xl sm:text-4xl font-semibold">Alia Knit Trouser</h1>
-            <p className="text-base sm:text-lg text-gray-700">
-              The Alia trousers bring the comfort of sweatpants into a tailored silhouette. Featuring a racing stripe, tapered leg, and German craftsmanship.
-            </p>
+            <div className='w-full lg:sticky lg:top-24 space-y-6'>
+              <h1 className="text-3xl sm:text-4xl font-semibold">Alia Knit Trouser</h1>
+              <p className="text-base sm:text-lg text-gray-700">
+                The Alia trousers bring the comfort of sweatpants into a tailored silhouette. Featuring a racing stripe, tapered leg, and German craftsmanship.
+              </p>
 
-            <div className="flex items-center gap-4">
-              <p className="text-gray-500 line-through text-lg sm:text-xl">
-                ${(currentPrice + 50).toFixed(2)}
-              </p>
-              <p className="text-xl sm:text-2xl font-semibold text-green-600">
-                ${currentPrice.toFixed(2)}
-              </p>
-            </div>
-            <div>
-              <p className="mb-2 font-medium">Select Size</p>
-              <div className="flex gap-3 flex-wrap">
-                {sizes.map((size) => (
+              <div className="flex items-center gap-4">
+                <p className="text-gray-500 line-through text-lg sm:text-xl">
+                  ${(currentPrice + 50).toFixed(2)}
+                </p>
+                <p className="text-xl sm:text-2xl font-semibold text-green-600">
+                  ${currentPrice.toFixed(2)}
+                </p>
+              </div>
+              <div>
+                <p className="mb-2 font-medium">Select Size</p>
+                <div className="flex gap-3 flex-wrap">
+                  {sizes.map((size) => (
+                    <button
+                      key={size}
+                      onClick={() => setSelectedSize(size)}
+                      className={`px-4 py-2 border rounded-full transition ${selectedSize === size
+                        ? 'bg-black text-white border-black'
+                        : 'border-gray-300'
+                        }`}
+                    >
+                      {size}
+                    </button>
+                  ))}
+                </div>
+              </div>
+              <div className="flex items-center gap-4 mt-4">
+                <p className="font-medium">Quantity</p>
+                <div className="flex justify-between items-center border border-gray-300 rounded-full overflow-hidden">
                   <button
-                    key={size}
-                    onClick={() => setSelectedSize(size)}
-                    className={`px-4 py-2 border rounded-full transition ${selectedSize === size
-                      ? 'bg-black text-white border-black'
-                      : 'border-gray-300'
-                      }`}
+                    onClick={decrementQty}
+                    className="px-4 py-2 text-lg hover:bg-gray-100"
                   >
-                    {size}
+                    −
                   </button>
-                ))}
+                  <span className="px-6 py-2">{quantity}</span>
+                  <button
+                    onClick={incrementQty}
+                    className="px-4 py-2 text-lg hover:bg-gray-100"
+                  >
+                    +
+                  </button>
+                </div>
               </div>
+              <button
+                onClick={() => {
+                  const newCartItem = {
+                    image: mainImage,
+                    title: 'Alia Knit Trouser',
+                    price: currentPrice,
+                    quantity,
+                    size: selectedSize,
+                  };
+
+                  const updatedCart = [...cartItems, newCartItem];
+                  localStorage.setItem('cartItems', JSON.stringify(updatedCart));
+
+                  setCartItems(updatedCart);
+                  setCartOpen(true);
+                }}
+
+                className="w-full bg-black text-white py-4 rounded-full text-base sm:text-lg hover:bg-gray-900 transition"
+              >
+                Add to Cart
+              </button>
             </div>
-            <div className="flex items-center gap-4 mt-4">
-              <p className="font-medium">Quantity</p>
-              <div className="flex justify-between items-center border border-gray-300 rounded-full overflow-hidden">
-                <button
-                  onClick={decrementQty}
-                  className="px-4 py-2 text-lg hover:bg-gray-100"
-                >
-                  −
-                </button>
-                <span className="px-6 py-2">{quantity}</span>
-                <button
-                  onClick={incrementQty}
-                  className="px-4 py-2 text-lg hover:bg-gray-100"
-                >
-                  +
-                </button>
-              </div>
-            </div>
-            <button
-              onClick={() => {
-                const newCartItem = {
-                  image: mainImage,
-                  title: 'Alia Knit Trouser',
-                  price: currentPrice,
-                  quantity,
-                  size: selectedSize,
-                };
-
-                const updatedCart = [...cartItems, newCartItem];
-                localStorage.setItem('cartItems', JSON.stringify(updatedCart));
-
-                setCartItems(updatedCart);
-                setCartOpen(true);
-              }}
-
-              className="w-full bg-black text-white py-4 rounded-full text-base sm:text-lg hover:bg-gray-900 transition"
-            >
-              Add to Cart
-            </button>
           </motion.div>
         </div>
       </div>
