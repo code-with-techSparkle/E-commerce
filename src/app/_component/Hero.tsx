@@ -18,9 +18,8 @@ function Hero() {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
-  // For scroll-based scaling
   const { scrollY } = useScroll();
-  const scrollScale = useTransform(scrollY, [0, 500], [1.1, 1.5]); // scale range increased
+  const scrollScale = useTransform(scrollY, [0, 500], [1.1, 1.5]); 
   const smoothScale = useSpring(scrollScale, { damping: 20, stiffness: 120 });
 
   const x = useTransform(mouseX, [0, windowSize.width], [-20, 20]);

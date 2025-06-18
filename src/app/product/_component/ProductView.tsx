@@ -61,7 +61,6 @@ export default function ProductView() {
     <>
       <div className="w-full px-4 md:px-8 lg:px-16 py-12 lg:py-24 bg-white text-black">
         <div className="flex flex-col md:flex-row gap-10 max-w-7xl mx-auto">
-          {/* Left: Product Images */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -76,8 +75,6 @@ export default function ProductView() {
               height={1000}
               className="rounded-xl object-cover w-full h-auto max-h-[500px] sm:max-h-[600px] object-top"
             />
-
-            {/* Thumbnails */}
             <div className="flex gap-3 justify-center flex-wrap">
               {productImages.map((img, index) => (
                 <div
@@ -97,8 +94,6 @@ export default function ProductView() {
               ))}
             </div>
           </motion.div>
-
-          {/* Right: Product Details */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -110,9 +105,14 @@ export default function ProductView() {
               The Alia trousers bring the comfort of sweatpants into a tailored silhouette. Featuring a racing stripe, tapered leg, and German craftsmanship.
             </p>
 
-            <p className="text-xl sm:text-2xl font-medium">${currentPrice.toFixed(2)}</p>
-
-            {/* Size Selector */}
+            <div className="flex items-center gap-4">
+              <p className="text-gray-500 line-through text-lg sm:text-xl">
+                ${(currentPrice + 50).toFixed(2)}
+              </p>
+              <p className="text-xl sm:text-2xl font-semibold text-green-600">
+                ${currentPrice.toFixed(2)}
+              </p>
+            </div>
             <div>
               <p className="mb-2 font-medium">Select Size</p>
               <div className="flex gap-3 flex-wrap">
@@ -130,8 +130,6 @@ export default function ProductView() {
                 ))}
               </div>
             </div>
-
-            {/* Quantity Selector */}
             <div className="flex items-center gap-4 mt-4">
               <p className="font-medium">Quantity</p>
               <div className="flex justify-between items-center border border-gray-300 rounded-full overflow-hidden">
@@ -150,8 +148,6 @@ export default function ProductView() {
                 </button>
               </div>
             </div>
-
-            {/* Add to Cart */}
             <button
               onClick={() => {
                 const newCartItem = {
@@ -161,14 +157,14 @@ export default function ProductView() {
                   quantity,
                   size: selectedSize,
                 };
-              
+
                 const updatedCart = [...cartItems, newCartItem];
                 localStorage.setItem('cartItems', JSON.stringify(updatedCart));
-              
+
                 setCartItems(updatedCart);
                 setCartOpen(true);
               }}
-              
+
               className="w-full bg-black text-white py-4 rounded-full text-base sm:text-lg hover:bg-gray-900 transition"
             >
               Add to Cart
@@ -178,7 +174,7 @@ export default function ProductView() {
       </div>
       <CartSidebar
         isOpen={cartOpen}
-        onClose={() => setCartOpen(false)}  
+        onClose={() => setCartOpen(false)}
         cartItems={cartItems}
         onRemove={removeFromCart}
         onUpdateQuantity={updateCartQuantity}

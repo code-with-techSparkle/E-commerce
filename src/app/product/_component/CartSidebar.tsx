@@ -58,8 +58,6 @@ export default function CartSidebar({
                 <div className="flex-1">
                   <h4 className="font-semibold">{item.title}</h4>
                   <p className="text-sm text-gray-500">Size: {item.size}</p>
-
-                  {/* Quantity Controls */}
                   <div className="flex items-center gap-2 mt-2">
                     <button
                       className="px-2 py-1 border rounded"
